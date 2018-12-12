@@ -26,6 +26,15 @@
 	<h3>TITLE : ${dto.title}</h3>
 	<h3>WRITER : ${dto.writer}</h3>
 	<h3>CONTENTS : ${dto.contents}</h3>
+	<div>
+		<c:forEach items="${files}" var="file" varStatus="i">
+			<div id="f${i.index}">
+				<a href="../resources/${board}/${file.fname}">${file.oname}</a>
+			</div>
+		
+		</c:forEach>
+	
+	</div>
 	
 	
 	<a href="./${board}List">List</a>

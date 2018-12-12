@@ -38,30 +38,29 @@ public class NoticeService{
 		return mv;
 	}
 	
-	public BoardDTO select(int num)throws Exception{
-		FileDTO fileDTO = new FileDTO();
-		fileDTO.setNum(num);
-		fileDTO.setKind("n");
-		List<FileDTO> files=fileDAO.list(fileDTO);
-		return noticeDAO.select(num);
-	}
-	public String select(int num, Model model, RedirectAttributes rd)throws Exception{
-		FileDTO fileDTO = new FileDTO();
-		fileDTO.setNum(num);
-		fileDTO.setKind("n");
-		List<FileDTO> files=fileDAO.list(fileDTO);
-		BoardDTO boardDTO = noticeDAO.select(num);
-		String path="";
-		if(boardDTO != null) {
-			model.addAttribute("dto", boardDTO);
-			model.addAttribute("files", files);
-			path="board/boardSelect";
-		}else {
-			rd.addFlashAttribute("msg", "해당 글은 없습니다.");
-			path="./noticeList";
-		}
+	
+	public ModelAndView select(int num)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		//1. notice table
+		 BoardDTO boardDTO = noticeDAO.select(num);
 		
-		return path;
+		//2. Files table
+		 if(boardDTO != null) {
+			 FileDTO fileDTO = new FileDTO();
+			 fileDTO.setNum(num);
+			 fileDTO.setKind("n");
+			 List<FileDTO> ar = fileDAO.list(fileDTO);
+			 mv.setViewName("board/boardSelect");
+			 mv.addObject("dto", boardDTO);
+			 mv.addObject("files", ar);
+		 }else {
+			 mv.setViewName("redirect:./noticeList");
+			 mv.addObject("msg", "글이 없습니다");
+		 }
+		 
+		 mv.addObject("board", "notice");
+		
+		return mv;
 	}
 	
 	
