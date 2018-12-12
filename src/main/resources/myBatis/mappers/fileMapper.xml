@@ -10,7 +10,7 @@
   
   	<!-- insert -->
   	<insert id="insert" parameterType="FileDTO">
-  		insert into files values(files_seq.nextval,#{num},#{fname}, #{oname}, #{kind})
+  		insert into files values(files_seq.nextval, #{fname}, #{oname}, #{kind}, #{num})
   	</insert>
   	
   	<!-- deleteAll -->
@@ -22,6 +22,9 @@
   	<delete id="delete" parameterType="java.lang.Integer">
   		delete files where fnum=#{fnum} 
   	</delete>
+  	<update id="update" parameterType="java.lang.Integer">
+  		update files set fname
+  	</update>
   	
   	<!-- select -->
   	<select id="select" parameterType="java.lang.Integer" resultType="FileDTO">

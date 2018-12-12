@@ -1,6 +1,7 @@
 package com.iu.board;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.iu.file.FileDTO;
 
@@ -13,16 +14,16 @@ public class BoardDTO {
 	private Date reg_date;
 	private int hit;
 	
-	private FileDTO files;
+	private List<FileDTO> files;
 
-	public FileDTO getFiles() {
+	
+	
+	public List<FileDTO> getFiles() {
 		return files;
 	}
-
-	public void setFiles(FileDTO files) {
+	public void setFiles(List<FileDTO> files) {
 		this.files = files;
 	}
-	
 	public int getNum() {
 		return num;
 	}
