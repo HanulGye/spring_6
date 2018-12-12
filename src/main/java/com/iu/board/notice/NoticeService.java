@@ -83,6 +83,9 @@ public class NoticeService{
 		String realPath = session.getServletContext().getRealPath("resources/notice");
 		
 		for(MultipartFile multipartFile:f1) {
+			if(multipartFile.isEmpty()) {
+				continue;
+			}
 			String fname=fs.saveFile(realPath, multipartFile);
 		//4. Files table insert
 			FileDTO fileDTO = new FileDTO();
