@@ -62,9 +62,10 @@ public class NoticeController {
 	
 	//update Form
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.GET)
-	public String update(Model model) {
-		model.addAttribute("board", "notice");
-		return "board/boardUpdate";
+	public ModelAndView update(int num) throws Exception {
+		ModelAndView mv = noticeService.select(num);
+		mv.setViewName("board/boardUpdate");
+		return mv;
 	}  
 	
 	//update process

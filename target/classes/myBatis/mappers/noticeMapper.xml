@@ -54,7 +54,17 @@
   	
   	<insert id="insert" parameterType="NoticeDTO">
   		insert into notice values(#{num}, #{title}, #{writer}, #{contents}, sysdate, 0) 
-  	</insert>  	
+  	</insert>
+  	
+  	<update id="update" parameterType="NoticeDTO">
+  		update notice set title=#{title}, contents=#{contents} where num=#{num}
+  	</update>  	
   	
   	
+  
+  
+  
+  
+  
+  
   </mapper>
