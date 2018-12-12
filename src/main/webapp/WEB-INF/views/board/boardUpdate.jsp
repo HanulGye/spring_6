@@ -9,8 +9,34 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		
+		var count=${files.size()};
+		var index=0;
+		
+		$("#addFile").on("click",".del", function() {
+			var f = $(this).attr("title");
+			$("#"+f).remove();
+			count--;
+		});
+		
+		
+		$("#btn").click(function() {
+			if(count<5){
+				var file='<div id="a'+index+'"><input type="file" name="f1"><span title="a'+index+'" class="del">X</span></div>';
+				$("#addFile").append(file);
+				/* var f = $("#f").html();
+				$("#addFile").append(f); */
+				count++;
+				index++;
+			}else {
+				alert('파일은 최대 5개');
+			}
+		});
+		
+		
 		$(".files").click(function() {
 			var id=$(this).attr("id");
+			var del=$(this).attr("title");
 			$.ajax({
 				url:"../file/delete",
 				type:"GET",
@@ -18,16 +44,25 @@
 					fnum:id
 				},
 				success:function(data){
-					
+					data=data.trim();
+					if(data==1){
+						$("#"+del).remove();
+						count--;
+					}else {
+						alert("File Delete Fail");
+					}
 				}
 			});
 		});
 	});
 </script>
 <style type="text/css">
-	.files {
+	.files, .del {
 		color: red;
 		cursor: pointer;
+	}
+	#f {
+		display: none;
 	}
 </style>
 </head>
@@ -39,7 +74,9 @@
 		<input type="text" name="title" value="${dto.title}">
 		<input type="text" name="writer" value="${dto.writer}">
 		<textarea name="contents" rows="" cols="">${dto.contents}</textarea>
+		<div id="addFile">
 		
+		</div>
 		<div>
 			<c:forEach items="${files}" var="file" varStatus="i">
 				<div id="f${i.index}">
@@ -47,9 +84,14 @@
 				</div>
 			</c:forEach>
 		</div>
-		
+		<input type="button" id="btn" value="ADD">
 		<button>Update</button>
 	</form>
+<!-- 	<div id="f">
+		<div id="a1">
+		<input type="file" name="f1"><span>X</span>
+		</div>
+	</div> -->
 
 </body>
 </html>
