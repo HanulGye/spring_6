@@ -70,8 +70,8 @@ public class NoticeController {
 	
 	//update process
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.POST)
-	public ModelAndView update(BoardDTO boardDTO) throws Exception {
-		 ModelAndView mv=noticeService.update(boardDTO);
+	public ModelAndView update(BoardDTO boardDTO, List<MultipartFile> f1, HttpSession session) throws Exception {
+		 ModelAndView mv=noticeService.update(boardDTO, f1, session);
 		 return mv;
 	}
 	

@@ -69,7 +69,7 @@
 <body>
 	<h1>${board} Update</h1>
 	
-	<form action="./${board}Update" method="post">
+	<form action="./${board}Update" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="num" value="${dto.num}">
 		<input type="text" name="title" value="${dto.title}">
 		<input type="text" name="writer" value="${dto.writer}">

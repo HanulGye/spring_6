@@ -15,11 +15,9 @@
 		<textarea name="contents" rows="" cols=""></textarea>
 		<input type="button" value="ADD">
 		<div id="files">
-			<div>
-				<input type="file" name="f1"><span>X</span>
-				<input type="file" name="f1"><span>X</span>
-			</div>
+			
 		</div>
+		
 		<button>Write</button>
 	</form>
 	
