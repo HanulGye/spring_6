@@ -17,6 +17,10 @@ public class QnaDAO implements BoardDAO {
 	@Inject
 	private SqlSession sqlSession;
 	private final String NAMESPACE="qnaMapper.";
+	
+	public int getNum()throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getNum");
+	}
 
 	@Override
 	public int totalCount(Pager pager) throws Exception {

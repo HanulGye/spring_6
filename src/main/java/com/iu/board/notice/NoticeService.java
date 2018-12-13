@@ -21,7 +21,7 @@ import com.iu.util.FileSaver;
 import com.iu.util.Pager;
 
 @Service
-public class NoticeService{
+public class NoticeService implements BoardService{
 	@Inject
 	private NoticeDAO noticeDAO;
 	@Inject
@@ -148,9 +148,7 @@ public class NoticeService{
 		
 		//3. Files table Delete
 		result=fileDAO.deleteAll(fileDTO);
-		if(result<1) {
-			throw new Exception();
-		}
+		
 		
 		//4. HDD Delete 
 		String realPath = session.getServletContext().getRealPath("resources/notice");

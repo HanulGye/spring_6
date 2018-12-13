@@ -26,12 +26,9 @@ $(function(){
               fOnBeforeUnload : function(){
                    
               }
-          }, 
-          fOnAppLoad : function(){
-              //기존 저장된 내용의 text 내용을 에디터상에 뿌려주고자 할때 사용
-              oEditors.getById["contents"].exec("PASTE_HTML", ["기존 DB에 저장된 내용을 에디터에 적용할 문구"]);
-          },
-          fCreator: "createSEditor2"
+          } 
+          
+         
       });
       
       //저장버튼 클릭시 form 전송
@@ -52,14 +49,14 @@ $(function(){
 		<input type="text" name="title">
 		<input type="text" name="writer">
 		<textarea name="contents" id="contents" rows="" cols=""></textarea>
-		<input type="button" value="ADD">
-		<div id="files">
+		<input type="button" id="btn" value="ADD">
+		<div id="addFile">
 			
 		</div>
 		
 		<input type="button" id="save" value="WRITE">
 	</form>
 	
-
+<script type="text/javascript" src="../resources/test.js"></script>
 </body>
 </html>

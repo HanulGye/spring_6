@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.iu.util.Pager;
 
-public interface BoardDAO {
+public interface BoardDAO  {
+	
+	public int getNum()throws Exception;
 	//List
 	public List<BoardDTO> list(Pager pager) throws Exception;
 	//select
