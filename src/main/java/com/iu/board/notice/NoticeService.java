@@ -147,9 +147,9 @@ public class NoticeService implements BoardService{
 		
 		//3. Files table Delete
 		result=fileDAO.deleteAll(fileDTO);
-		if(result<1) {
+		/*if(result<1) {
 			throw new Exception();
-		}
+		}*/
 		
 		//4. HDD Delete 
 		String realPath = session.getServletContext().getRealPath("resources/notice");

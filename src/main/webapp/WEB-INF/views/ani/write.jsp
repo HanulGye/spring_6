@@ -32,32 +32,39 @@ $(function(){
           oEditors.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
           $("#frm").submit();
       });
-      
-      
-      
-      
-      
 });
 </script>
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${board} Write</h1>
-	
-	<form id="frm" action="./${board}Write" method="post" enctype="multipart/form-data">
-		<input type="text" name="title">
-		<input type="text" name="writer">
-		<textarea name="contents" rows="" cols="" id="contents"></textarea>
-		<input type="button" value="ADD" id="btn">
+	<h1>유기동물 등록</h1>
+
+	<form id="frm" action="./write" method="post" enctype="multipart/form-data">
+		글 제목: <input type="text" name="title">
+		유기동물 종:<select name="kind">
+			<option value="d">강아지</option>
+			<option value="c">고양이</option>
+		</select>
+		발견장소:<input type="text" name="location">
+		이름:<input type="text" name="name">
+		나이:<input type="text" name="age">
+		성별:<select name="sung">
+			<option value="m">수컷</option>
+			<option value="f">암컷</option>
+		</select>
+		<p></p>
+		
+		상세내용:<textarea name="contents" rows="" cols="" id="contents"></textarea>
+		
+		
 		<div id="addFile">
-			
+			대표 이미지:
+			<input type="file" name="multipartFile">
 		</div>
 		<input type="button" value="Write" id="save">
 	</form>
 	
 
-<script type="text/javascript" src="../resources/js/addFile.js"></script>
 </body>
 </html>

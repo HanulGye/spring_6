@@ -8,8 +8,8 @@
   		insert into member values(#{id}, #{pw}, #{name}, #{email}, #{phone}, #{address},#{grade})
   	</insert>
   	
-  	<select id="idCheck" parameterType="java.lang.String" resultType="MemberDTO">
-  		select * from member where id=#{id}
+  	<select id="idCheck" parameterType="String" resultType="String">
+  		select id from member where id=#{id}
   	</select>
   	
   	<select id="login" parameterType="MemberDTO" resultType="MemberDTO">
@@ -20,7 +20,7 @@
   		update member set pw=#{pw}, name=#{name}, email=#{email}, phone=#{phone},address=#{address} where id=#{id}
   	</update>
   	
-  	<delete id="delete" parameterType="java.lang.String">
+  	<delete id="delete" parameterType="String">
   		delete member where id=#{id} 
   	</delete>
   	

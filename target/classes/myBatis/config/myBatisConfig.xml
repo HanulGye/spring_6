@@ -13,5 +13,7 @@
 		<typeAlias type="com.iu.file.FileDTO" alias="FileDTO"/>
 		<typeAlias type="java.util.ArrayList" alias="ArrayList"/>
 		<typeAlias type="java.lang.Integer" alias="Integer"/>
+		<typeAlias type="java.lang.String" alias="String"/>
+		<typeAlias type="com.hanul.animal.AnimalDTO" alias="AnimalDTO"/>
 	</typeAliases>
 </configuration>

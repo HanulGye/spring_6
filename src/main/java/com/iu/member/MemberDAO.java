@@ -16,7 +16,7 @@ public class MemberDAO {
 		return sqlSession.insert(NAMESPACE+"join", memberDTO);
 	}
 	
-	public MemberDTO idCheck(String id)throws Exception{
+	public String idCheck(String id)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"idCheck", id);
 	}
 	
