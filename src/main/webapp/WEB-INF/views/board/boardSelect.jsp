@@ -27,7 +27,7 @@
 	<h3>WRITER : ${dto.writer}</h3>
 	<h3>CONTENTS : ${dto.contents}</h3>
 	<div>
-		<c:forEach items="${files}" var="file" varStatus="i">
+		<c:forEach items="${dto.files}" var="file" varStatus="i">
 			<div id="f${i.index}">
 				<a href="../resources/${board}/${file.fname}">${file.oname}</a>
 			</div>
