@@ -45,7 +45,7 @@ $(function(){
 		<input type="text" name="title">
 		<input type="text" name="writer">
 		<textarea name="contents" rows="" cols="" id="contents"></textarea>
-		<input type="button" value="ADD">
+		<input type="button" value="ADD" id="btn">
 		<div id="files">
 			
 		</div>

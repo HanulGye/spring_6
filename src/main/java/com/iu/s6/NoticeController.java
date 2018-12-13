@@ -55,7 +55,7 @@ public class NoticeController {
 		String realPath = session.getServletContext().getRealPath("resources/upload");
 		System.out.println(realPath);
 		
-		ModelAndView mv = noticeService.insert(boardDTO, f1, session);
+		ModelAndView mv = noticeService.insert(boardDTO,session,f1);
 		
 		return mv;
 	}
@@ -71,7 +71,7 @@ public class NoticeController {
 	//update process
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.POST)
 	public ModelAndView update(BoardDTO boardDTO, List<MultipartFile> f1, HttpSession session) throws Exception {
-		 ModelAndView mv=noticeService.update(boardDTO, f1, session);
+		 ModelAndView mv=noticeService.update(boardDTO,session,f1);
 		 return mv;
 	}
 	

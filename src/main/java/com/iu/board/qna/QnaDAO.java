@@ -1,7 +1,7 @@
 package com.iu.board.qna;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -34,13 +34,13 @@ public class QnaDAO implements BoardDAO {
 		return sqlSession.selectOne(NAMESPACE+"select", num);
 	}
 
-	//원본글 작성
+	//�썝蹂멸� �옉�꽦
 	@Override
 	public int insert(BoardDTO boardDTO) throws Exception {
 		
 		return sqlSession.insert(NAMESPACE+"insert", boardDTO);
 	}
-	//답글 작성
+	//�떟湲� �옉�꽦
 	public int reply(QnaDTO qnaDTO) throws Exception{
 		return sqlSession.insert(NAMESPACE+"reply", qnaDTO);
 	}
@@ -58,5 +58,11 @@ public class QnaDAO implements BoardDAO {
 	public int delete(int num) throws Exception {
 		return sqlSession.delete(NAMESPACE+"delete", num);
 	}
+	
+	public int getNum() throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getNum");
+	}
+	
+	
 
 }

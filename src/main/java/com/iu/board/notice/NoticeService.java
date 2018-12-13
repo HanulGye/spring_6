@@ -21,7 +21,7 @@ import com.iu.util.FileSaver;
 import com.iu.util.Pager;
 
 @Service
-public class NoticeService{
+public class NoticeService implements BoardService{
 	@Inject
 	private NoticeDAO noticeDAO;
 	@Inject
@@ -60,7 +60,7 @@ public class NoticeService{
 	
 	
 	
-	public ModelAndView insert(BoardDTO boardDTO, List<MultipartFile> f1, HttpSession session) throws Exception {
+	public ModelAndView insert(BoardDTO boardDTO, HttpSession session, List<MultipartFile> f1) throws Exception {
 		//1. sequence num 가져오기
 		int num = noticeDAO.getNum();
 		
@@ -101,7 +101,7 @@ public class NoticeService{
 		return mv;
 	}
 	
-	public ModelAndView update(BoardDTO boardDTO, List<MultipartFile> f1, HttpSession session)throws Exception{
+	public ModelAndView update(BoardDTO boardDTO, HttpSession session, List<MultipartFile> f1)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = noticeDAO.update(boardDTO);
 		
