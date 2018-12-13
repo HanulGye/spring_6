@@ -46,13 +46,9 @@ public class NoticeService{
 		
 		//2. Files table
 		 if(boardDTO != null) {
-			 FileDTO fileDTO = new FileDTO();
-			 fileDTO.setNum(num);
-			 fileDTO.setKind("n");
-			 List<FileDTO> ar = fileDAO.list(fileDTO);
 			 mv.setViewName("board/boardSelect");
 			 mv.addObject("dto", boardDTO);
-			 mv.addObject("files", ar);
+			 
 		 }else {
 			 mv.setViewName("redirect:./noticeList");
 			 mv.addObject("msg", "글이 없습니다");
