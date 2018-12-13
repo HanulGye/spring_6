@@ -57,6 +57,15 @@ $(function(){
 		<input type="button" id="save" value="WRITE">
 	</form>
 	
-<script type="text/javascript" src="../resources/test.js"></script>
+<script type="text/javascript" src="../resources/js/fileAdd.js"></script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+

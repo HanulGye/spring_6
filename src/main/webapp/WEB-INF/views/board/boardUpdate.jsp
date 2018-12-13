@@ -11,6 +11,9 @@
 <script type="text/javascript">
 	var oEditors = [];
 	$(function() {
+		
+		setCount(${dto.files.size()+0});
+		
 		nhn.husky.EZCreator.createInIFrame({
 	          oAppRef: oEditors,
 	          //textarea의 ID
@@ -38,29 +41,7 @@
 	          $("#frm").submit();
 	      });    
 		
-			var count=0;
-			var index=0;
 			
-			
-			$("#addFile").on("click",".del", function() {
-				var f = $(this).attr("title");
-				$("#"+f).remove();
-				count--;
-			});
-			
-			
-			$("#btn").click(function() {
-				if(count<5){
-					var file='<div id="a'+index+'"><input type="file" name="f1"><span title="a'+index+'" class="del">X</span></div>';
-					$("#addFile").append(file);
-					/* var f = $("#f").html();
-					$("#addFile").append(f); */
-					count++;
-					index++;
-				}else {
-					alert('파일은 최대 5개');
-				}
-			});
 		
 		
 		$(".files").click(function() {
@@ -122,7 +103,7 @@
 		<input type="file" name="f1"><span>X</span>
 		</div>
 	</div> -->
-<script type="text/javascript" src="../resources/test.js"></script>
+<script type="text/javascript" src="../resources/js/fileAdd.js"></script>
 
 </body>
 </html>
