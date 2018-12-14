@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,19 +28,22 @@ public class NoticeController {
 	@Inject
 	private NoticeService noticeService;
 	
+	
 	//list
 	@RequestMapping(value="noticeList")
 	public ModelAndView list(Pager pager) throws Exception {
 		ModelAndView mv = noticeService.list(pager);
 		mv.addObject("board", "notice");
-		return mv;
+		throw new NullPointerException();
+		//return mv;
 	}
 	
 	//select
 	@RequestMapping(value="noticeSelect")
 	public ModelAndView select(int num) throws Exception {
 		ModelAndView mv = noticeService.select(num);
-		return mv;
+		throw new NumberFormatException();
+		//return mv;
 	}
 	
 	//write Form
