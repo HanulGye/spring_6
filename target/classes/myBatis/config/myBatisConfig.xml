@@ -15,5 +15,6 @@
 		<typeAlias type="java.lang.Integer" alias="Integer"/>
 		<typeAlias type="java.lang.String" alias="String"/>
 		<typeAlias type="com.hanul.animal.AnimalDTO" alias="AnimalDTO"/>
+		<typeAlias type="com.hanul.board.memo.MemoDTO" alias="MemoDTO"/>
 	</typeAliases>
 </configuration>

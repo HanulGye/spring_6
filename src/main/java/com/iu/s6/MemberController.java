@@ -44,4 +44,9 @@ public class MemberController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value="myPage")
+	public void myPage() throws Exception{
+		
+	}
+	
 }
